@@ -9,7 +9,6 @@
 
 int main(int argc, char **argv)
 {
-	char *buffer = NULL;
 	size_t buffersize = 0;
 	FILE *stream;
 	stack_t *head = NULL;
@@ -17,23 +16,21 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 		errors(0, NULL, 0);
-	arguments.command = NULL;
-	arguments.value = NULL;
 	stream = fopen(argv[1], "r");
 	if (!stream)
 		errors(1, argv[1], 0);
-	while (getline(&buffer, &buffersize, stream) != -1)
+	while (getline(&arguments.buffer, &buffersize, stream) != -1)
 	{
 		line_number++;
-		if (*buffer == '\n')
+		if (*arguments.buffer == '\n')
 			continue;
-		arguments.command = strtok(buffer, "\n ");
+		arguments.command = strtok(arguments.buffer, "\n ");
 		if (!arguments.command || *arguments.command == '#')
 			continue;
 		arguments.value = strtok(NULL, "\n ");
 		get_opcode(&head, line_number);
 	}
-	free_stuff(buffer, head);
+	free_stuff(head);
 	fclose(stream);
 	return (0);
 }

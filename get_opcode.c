@@ -23,5 +23,6 @@ void get_opcode(stack_t **head, unsigned int line_number)
 			return;
 		}
 	}
+	free(arguments.buffer);
 	errors(2, arguments.command, line_number);
 }

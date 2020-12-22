@@ -11,10 +11,16 @@ void _push(stack_t **head, unsigned int line_number)
 	stack_t *tmp = *head, *new;
 
 	if ((atoi(arguments.value) == 0 && (arguments.value)[0] != '0'))
+	{
+		free(arguments.buffer);
 		errors(3, NULL, line_number);
+	}
 	new = malloc(sizeof(stack_t));
 	if (!new)
+	{
+		free(arguments.buffer);
 		errors(4, NULL, 0);
+	}
 	if (!*head)
 		new->next = NULL;
 	else

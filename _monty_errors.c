@@ -33,5 +33,5 @@ void errors(unsigned int code, char *argv, unsigned int n_line)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
-		}
+	}
 }
