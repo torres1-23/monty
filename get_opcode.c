@@ -12,6 +12,7 @@ void get_opcode(stack_t **head, unsigned int line_number)
 	instruction_t op_codes[] = {
 		{"push", _push},
 		{"pall", _print_all},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 	for (i = 0; op_codes[i].opcode; i++)
