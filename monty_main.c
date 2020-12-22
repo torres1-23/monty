@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	while (getline(&buffer, &buffersize, stream) != -1)
 	{
 		line_number++;
-		if (*buffer == '\n')
+		if (*buffer == '\n' && *buffer == '#')
 			continue;
 		arguments.command = strtok(buffer, "\n ");
 		if (!arguments.command ||
