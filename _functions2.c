@@ -12,7 +12,7 @@ void _pchar(stack_t **head, unsigned int line_number)
 
 	if (*head)
 	{
-		if (tmp->n < 0 && tmp->n > 177)
+		if (tmp->n < 0 && tmp->n > 127)
 		{
 			errors1(14, line_number);
 			return;
