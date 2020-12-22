@@ -74,9 +74,14 @@ void errors1(unsigned int code, unsigned int n_line)
 		fprintf(stderr, "L%d: can't div, stack too short\n", n_line);
 		exit(EXIT_FAILURE);
 	}
-	else
+	else if (code == 11)
 	{
 		fprintf(stderr, "L%d: division by zero\n", n_line);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", n_line);
 		exit(EXIT_FAILURE);
 	}
 }
