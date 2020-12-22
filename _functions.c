@@ -95,7 +95,7 @@ void _swap(stack_t **head, unsigned int line_number)
 	stack_t *tmp = (*head)->next;
 	int n_tmp = 0;
 
-	if (list_len(*head) < 2)
+	if (list_len(*head) < 2 || !*head)
 	{
 		errors(7, NULL, line_number);
 		return;
