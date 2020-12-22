@@ -65,5 +65,6 @@ int list_len(stack_t *head);
 void _add(stack_t **head, unsigned int line_number);
 void errors1(unsigned int code, unsigned int n_line);
 void _sub(stack_t **head, unsigned int line_number);
+void _div(stack_t **head, unsigned int line_number);
 
 #endif /* _MONTY_H */

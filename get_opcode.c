@@ -17,6 +17,7 @@ void get_opcode(stack_t **head, unsigned int line_number)
 		{"swap", _swap},
 		{"add", _add},
 		{"sub", _sub},
+		{"div", _div},
 		{NULL, NULL}
 	};
 	for (i = 0; op_codes[i].opcode; i++)
