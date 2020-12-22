@@ -45,7 +45,6 @@ typedef struct instruction_s
 
 typedef struct argu_s
 {
-	char *buffer;
 	char *command;
 	char *value;
 } argu_t;
@@ -55,7 +54,7 @@ argu_t arguments;
 void get_opcode(stack_t **head, unsigned int line_number);
 void _push(stack_t **head, unsigned int line_number);
 void _print_all(stack_t **head, unsigned int line_number);
-void free_stuff(stack_t *head);
+void free_stuff(char *buffer, stack_t *head);
 void errors(unsigned int code, char *argv, unsigned int n_line);
 
 #endif /* _MONTY_H */

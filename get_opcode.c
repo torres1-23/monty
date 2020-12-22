@@ -15,7 +15,7 @@ void get_opcode(stack_t **head, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-	for (i = 0; op_codes[i].opcode; i++)
+ 	for (i = 0; op_codes[i].opcode; i++)
 	{
 		if (strcmp(arguments.command, op_codes[i].opcode) == 0)
 		{
@@ -23,6 +23,5 @@ void get_opcode(stack_t **head, unsigned int line_number)
 			return;
 		}
 	}
-	free(arguments.buffer);
 	errors(2, arguments.command, line_number);
 }

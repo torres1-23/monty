@@ -6,7 +6,7 @@
  * @head: pointr head to free.
  */
 
-void free_stuff(stack_t *head)
+void free_stuff(char *buffer, stack_t *head)
 {
 	stack_t *tmp = head, *new_head = head;
 
@@ -19,5 +19,5 @@ void free_stuff(stack_t *head)
 			free(new_head);
 		}
 	}
-	free(arguments.buffer);
+        free(buffer);
 }
