@@ -39,9 +39,14 @@ void errors(unsigned int code, char *argv, unsigned int n_line)
 		fprintf(stderr, "L%d: can't pint, stack empty\n", n_line);
 		exit(EXIT_FAILURE);
 	}
-	else
+	else if (code == 6)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", n_line);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short", n_line);
 		exit(EXIT_FAILURE);
 	}
 }

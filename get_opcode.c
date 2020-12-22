@@ -14,6 +14,7 @@ void get_opcode(stack_t **head, unsigned int line_number)
 		{"pall", _print_all},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{NULL, NULL}
 	};
 	for (i = 0; op_codes[i].opcode; i++)
@@ -46,4 +47,26 @@ int check_digit(char *string)
 		string++;
 	}
 	return (1);
+}
+
+/**
+ * list_len - calculates the length of the list.
+ * @head: pointer to head.
+ * Return: length of the list.
+ */
+
+int list_len(stack_t *head)
+{
+	int cont = 0;
+	stack_t *tmp = head;
+
+	if (head)
+	{
+		while (tmp)
+		{
+			cont++;
+			tmp = tmp->next;
+		}
+	}
+	return (cont);
 }

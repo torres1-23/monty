@@ -83,3 +83,24 @@ void _pop(stack_t **head, unsigned int line_number)
 	}
 	errors(6, NULL, line_number);
 }
+
+/**
+ * _swap - swaps the two top elements of stack
+ * @head: pointer to head node of stack
+ * @line_number: number of the line parsed.
+ */
+
+void _swap(stack_t **head, unsigned int line_number)
+{
+	stack_t *tmp = (*head)->next;
+	int n_tmp = 0;
+
+	if (list_len(*head) < 2)
+	{
+		errors(7, NULL, line_number);
+		return;
+	}
+	n_tmp = (*head)->n;
+	(*head)->n = tmp->n;
+	tmp->n = n_tmp;
+}
