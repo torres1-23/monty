@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 			continue;
 		arguments.command = strtok(buffer, "\n ");
 		if (!arguments.command ||
-			*arguments.command == *nop || *arguments.command == '#')
+			strcmp(arguments.command, nop) == 0 || strcmp(arguments.command, "#") == 0)
 			continue;
 		arguments.value = strtok(NULL, "\n ");
 		get_opcode(&head, line_number);
