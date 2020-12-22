@@ -28,12 +28,16 @@ void _add(stack_t **head, unsigned int line_number)
 void _sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *tmp = *head;
+	int sub;
 
 	if (list_len(*head) < 2)
 	{
 		errors1(9, line_number);
 		return;
 	}
-	tmp->next->n = abs(tmp->n - tmp->next->n);
+	sub = (tmp->n - tmp->next->n);
+	if (sub < 0)
+		sub *= -1;
+	tmp->next->n = sub;
 	_pop(head, line_number);
 }
