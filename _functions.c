@@ -92,14 +92,15 @@ void _pop(stack_t **head, unsigned int line_number)
 
 void _swap(stack_t **head, unsigned int line_number)
 {
-	stack_t *tmp = (*head)->next;
+	stack_t *tmp = NULL;
 	int n_tmp = 0;
 
-	if (list_len(*head) < 2 || !*head)
+	if (list_len(*head) < 2)
 	{
 		errors(7, NULL, line_number);
 		return;
 	}
+	tmp = (*head)->next;
 	n_tmp = (*head)->n;
 	(*head)->n = tmp->n;
 	tmp->n = n_tmp;
