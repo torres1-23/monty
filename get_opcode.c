@@ -24,3 +24,24 @@ void get_opcode(stack_t **head, unsigned int line_number)
 	}
 	errors(2, arguments.command, line_number);
 }
+
+/**
+ * check_digit - Function that checks if is digit or not
+ * @string: string to verify
+ * Return: 1 if is digit 0 if not.
+ */
+
+int check_digit(char *string)
+{
+	if (!string || *string == '\0')
+		return (0);
+	if (*string == '-')
+		string++;
+	while (*string)
+	{
+		if (isdigit(*string) == 0)
+			return (0);
+		string++;
+	}
+	return (1);
+}

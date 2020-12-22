@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -56,5 +57,6 @@ void _push(stack_t **head, unsigned int line_number);
 void _print_all(stack_t **head, unsigned int line_number);
 void free_stuff(char *buffer, stack_t *head);
 void errors(unsigned int code, char *argv, unsigned int n_line);
+int check_digit(char *string);
 
 #endif /* _MONTY_H */
