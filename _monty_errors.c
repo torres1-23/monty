@@ -50,3 +50,19 @@ void errors(unsigned int code, char *argv, unsigned int n_line)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * errors1 - print to stderr error message
+ * @code: code of error.
+ * @argv: args to print.
+ * @n_line: line number.
+ */
+
+void errors1(unsigned int code, unsigned int n_line)
+{
+	if (code == 8)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", n_line);
+		exit(EXIT_FAILURE);
+	}
+}

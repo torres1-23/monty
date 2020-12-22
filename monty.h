@@ -62,5 +62,7 @@ void _pint(stack_t **head, unsigned int line_number);
 void _pop(stack_t **head, unsigned int line_number);
 void _swap(stack_t **head, unsigned int line_number);
 int list_len(stack_t *head);
+void _add(stack_t **head, unsigned int line_number);
+void errors1(unsigned int code, unsigned int n_line);
 
 #endif /* _MONTY_H */
