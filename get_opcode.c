@@ -14,8 +14,7 @@ void get_opcode(stack_t **head, unsigned int line_number)
 		{"pall", _print_all},
 		{NULL, NULL}
 	};
-
- 	for (i = 0; op_codes[i].opcode; i++)
+	for (i = 0; op_codes[i].opcode; i++)
 	{
 		if (strcmp(arguments.command, op_codes[i].opcode) == 0)
 		{
