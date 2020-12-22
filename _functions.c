@@ -78,6 +78,7 @@ void _pop(stack_t **head, unsigned int line_number)
 		*head = tmp->next;
 		if (tmp->next)
 			tmp->next->prev = NULL;
+		free(tmp);
 		return;
 	}
 	errors(6, NULL, line_number);
