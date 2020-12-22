@@ -27,10 +27,10 @@ int main(int argc, char **argv)
 		line_number++;
 		if (*buffer == '\n')
 			continue;
-		arguments.command = strtok(buffer, "\n ");
+		arguments.command = strtok(buffer, "\t\n ");
 		if (!arguments.command || *arguments.command == '#')
 			continue;
-		arguments.value = strtok(NULL, "\n ");
+		arguments.value = strtok(NULL, "\t\n ");
 		get_opcode(&head, line_number);
 	}
 	free_stuff(buffer, head);
