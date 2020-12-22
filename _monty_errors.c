@@ -84,9 +84,19 @@ void errors1(unsigned int code, unsigned int n_line)
 		fprintf(stderr, "L%d: can't mul, stack too short\n", n_line);
 		exit(EXIT_FAILURE);
 	}
-	else
+	else if (code == 13)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", n_line);
+		exit(EXIT_FAILURE);
+	}
+	else if (code == 14)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", n_line);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", n_line);
 		exit(EXIT_FAILURE);
 	}
 }
