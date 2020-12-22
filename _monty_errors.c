@@ -54,7 +54,6 @@ void errors(unsigned int code, char *argv, unsigned int n_line)
 /**
  * errors1 - print to stderr error message
  * @code: code of error.
- * @argv: args to print.
  * @n_line: line number.
  */
 

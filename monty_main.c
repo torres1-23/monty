@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	char *buffer = NULL;
+	char *buffer = NULL, nop[4] = "nop";
 	size_t buffersize = 0;
 	FILE *stream;
 	stack_t *head = NULL;
@@ -26,7 +26,8 @@ int main(int argc, char **argv)
 		if (*buffer == '\n')
 			continue;
 		arguments.command = strtok(buffer, "\n ");
-		if (!arguments.command || *arguments.command == '#')
+		if (!arguments.command ||
+			*arguments.command == *nop || *arguments.command == '#')
 			continue;
 		arguments.value = strtok(NULL, "\n ");
 		get_opcode(&head, line_number);
