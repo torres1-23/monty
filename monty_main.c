@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	char *buffer = NULL, hash[3] = "# ";
+	char *buffer = NULL;
 	size_t buffersize = 0;
 	FILE *stream;
 	stack_t *head = NULL;
@@ -27,8 +27,7 @@ int main(int argc, char **argv)
 			continue;
 		arguments.command = strtok(buffer, "\n ");
 		if (!arguments.command ||
-			strcmp(arguments.command, "nop") == 0 || *arguments.command == *hash ||
-			strcmp(arguments.command, "#") == 0)
+			strcmp(arguments.command, "nop") == 0 || *arguments.command == '#')
 			continue;
 		arguments.value = strtok(NULL, "\n ");
 		get_opcode(&head, line_number);
