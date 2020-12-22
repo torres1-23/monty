@@ -19,5 +19,5 @@ void free_stuff(char *buffer, stack_t *head)
 			free(new_head);
 		}
 	}
-        free(buffer);
+	free(buffer);
 }
