@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	unsigned int line_number = 0;
 
 	if (argc != 2)
-	errors(0, NULL, 0);
+		errors(0, NULL, 0);
 	arguments.command = NULL;
 	arguments.value = NULL;
 	stream = fopen(argv[1], "r");
@@ -27,10 +27,10 @@ int main(int argc, char **argv)
 		line_number++;
 		if (*buffer == '\n')
 			continue;
-		arguments.command = strtok(buffer, "\t\n ");
+		arguments.command = strtok(buffer, "\n ");
 		if (!arguments.command || *arguments.command == '#')
 			continue;
-		arguments.value = strtok(NULL, "\t\n ");
+		arguments.value = strtok(NULL, "\n ");
 		get_opcode(&head, line_number);
 	}
 	free_stuff(buffer, head);
