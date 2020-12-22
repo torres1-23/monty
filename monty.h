@@ -59,5 +59,6 @@ void free_stuff(char *buffer, stack_t *head);
 void errors(unsigned int code, char *argv, unsigned int n_line);
 int check_digit(char *string);
 void _pint(stack_t **head, unsigned int line_number);
+void _pop(stack_t **head, unsigned int line_number);
 
 #endif /* _MONTY_H */

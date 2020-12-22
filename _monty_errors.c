@@ -34,9 +34,14 @@ void errors(unsigned int code, char *argv, unsigned int n_line)
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	else
+	else if (code == 5)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", n_line);
+		exit(EXIT_FAILURE);
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", n_line);
 		exit(EXIT_FAILURE);
 	}
 }
