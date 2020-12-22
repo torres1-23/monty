@@ -46,7 +46,7 @@ void errors(unsigned int code, char *argv, unsigned int n_line)
 	}
 	else
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short", n_line);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", n_line);
 		exit(EXIT_FAILURE);
 	}
 }
