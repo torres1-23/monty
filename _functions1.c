@@ -50,12 +50,12 @@ void _div(stack_t **head, unsigned int line_number)
 
 	if (list_len(*head) < 2)
 	{
-		errors1(11, line_number);
+		errors1(10, line_number);
 		return;
 	}
 	if (tmp->n == 0)
 	{
-		errors1(10, line_number);
+		errors1(11, line_number);
 		return;
 	}
 	tmp->next->n = tmp->next->n / tmp->n;
