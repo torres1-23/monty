@@ -64,4 +64,9 @@ void errors1(unsigned int code, unsigned int n_line)
 		fprintf(stderr, "L%d: can't add, stack too short\n", n_line);
 		exit(EXIT_FAILURE);
 	}
+	else
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", n_line);
+		exit(EXIT_FAILURE);
+	}
 }
